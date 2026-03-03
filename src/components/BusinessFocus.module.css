@@ -1,0 +1,133 @@
+.section {
+    background: #f3f4f8;
+    padding: 100px 0;
+}
+
+.headerWrap {
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 0 24px;
+}
+
+.eyebrow {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.sectionTitle {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 800;
+    color: #1f2937;
+}
+
+/* ─── Each Item Row ──────────────────────────── */
+.item {
+    padding: 60px 0;
+    position: relative;
+}
+
+.divider {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    border-top: 1px solid #e5e7eb;
+    padding: 0 24px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.flipped .container,
+.item.flipped>.container {
+    direction: rtl;
+}
+
+.flipped .container>* {
+    direction: ltr;
+}
+
+/* ─── Visual ─────────────────────────────────── */
+.visual {
+    display: flex;
+    justify-content: center;
+}
+
+.illustrationBox {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.numBg {
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    font-size: 9rem;
+    font-weight: 900;
+    color: rgba(105, 34, 196, 0.07);
+    line-height: 1;
+    user-select: none;
+    z-index: 0;
+}
+
+.illus {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 10px 30px rgba(105, 34, 196, 0.1));
+}
+
+/* ─── Text ──────────────────────────────────── */
+.text {
+    max-width: 500px;
+}
+
+.numLabel {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(105, 34, 196, 0.15);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.itemTitle {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.itemDesc {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.75;
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .flipped .container {
+        direction: ltr;
+    }
+
+    .numBg {
+        font-size: 6rem;
+    }
+}
