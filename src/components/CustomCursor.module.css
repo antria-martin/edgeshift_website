@@ -1,19 +1,43 @@
 .dot {
-  position: fixed;
-  top: -5px;
-  left: -5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #f07a1a;
+  /*position: fixed;
+  top: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
   pointer-events: none;
   z-index: 99999;
-  transition: opacity 0.2s;
   will-change: transform;
+  animation: spinGear 3s linear infinite;
+  */
+  display: none;
+}
+
+/* Gear shape using emoji rendered in a pseudo-friendly way via SVG background */
+.dot::after {
+  /*content: "⚙";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  line-height: 1;
+  color: #f07a1a;
+  filter: drop-shadow(0 0 3px rgba(240, 122, 26, 0.6));
+  */
+  display: none;
+}
+
+@keyframes spinGear {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
 }
 
 .ring {
-  position: fixed;
+  /* position: fixed;
   top: -20px;
   left: -20px;
   width: 40px;
@@ -30,13 +54,29 @@
     left 0.25s ease,
     border-color 0.25s ease,
     background 0.25s ease;
+    */
+  display: none;
 }
 
 .ring.hover {
-  width: 60px;
-  height: 60px;
-  top: -30px;
-  left: -30px;
+  /*width: 64px;
+  height: 64px;
+  top: -32px;
+  left: -32px;
   border-color: #f07a1a;
-  background: rgba(240, 122, 26, 0.08);
+  border-width: 2px;
+  border-style: dashed;
+  background: rgba(240, 122, 26, 0.06);
+  animation: spinRing 4s linear infinite;
+  */
+  display: none;
+}
+
+@keyframes spinRing {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
 }
