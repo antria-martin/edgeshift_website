@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,16 +18,33 @@ export default function Navbar() {
       <nav className={styles.nav}>
         {/* Logo */}
         <Link href="/" className={styles.logo}>
-          <Image
-            src="/Edgeshift_logo.jpg"
-            alt="Edgeshift Inc."
-            width={44}
-            height={44}
-          />
+          <div className={styles.logoIcon}>
+            <svg
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="20" cy="20" r="20" fill="#1a56db" />
+              <text
+                x="50%"
+                y="55%"
+                dominantBaseline="middle"
+                textAnchor="middle"
+                fill="white"
+                fontSize="16"
+                fontFamily="Jost"
+                fontWeight="700"
+              >
+                H
+              </text>
+            </svg>
+          </div>
           <div className={styles.logoText}>
             <span className={styles.logoMain}>Edgeshift Inc.</span>
+            {/*<span className={styles.logoSub}>TechWorks</span>
           </div>
         </Link>
+
         {/* Nav Links */}
         <ul className={`${styles.navLinks} ${mobileOpen ? styles.open : ""}`}>
           <li>

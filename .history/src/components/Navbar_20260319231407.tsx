@@ -20,7 +20,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className={styles.logo}>
           <Image
-            src="/Edgeshift_logo.jpg"
+            src="/edgeshift-logo.png"
             alt="Edgeshift Inc."
             width={44}
             height={44}

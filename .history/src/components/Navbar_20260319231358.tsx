@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,7 +19,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className={styles.logo}>
           <Image
-            src="/Edgeshift_logo.jpg"
+            src="/edgeshift-logo.png"
             alt="Edgeshift Inc."
             width={44}
             height={44}
