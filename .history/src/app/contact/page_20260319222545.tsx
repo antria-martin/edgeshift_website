@@ -5,7 +5,33 @@ import Footer from "@/components/Footer";
 import styles from "./contact.module.css";
 
 export default function ContactPage() {
-  const [form, setForm] = useState({
+  const [form, setForm] =.heroInner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.heroTitle {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.15;
+}
+
+.heroSub {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.75;
+} useState({
     name: "",
     email: "",
     phone: "",
