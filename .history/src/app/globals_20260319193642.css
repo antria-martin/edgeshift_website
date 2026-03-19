@@ -1,0 +1,277 @@
+/*
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none !important;
+}
+
+:root {
+  --purple: #6922c4;
+  --purple-dark: #5a1baa;
+  --blue: #1a56db;
+  --blue-dark: #1347c0;
+  --yellow: #f59e0b;
+  --yellow-dark: #d97706;
+  --dark: #0f0e1a;
+  --gray: #6b7280;
+  --light-gray: #f3f4f8;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  color: #1f2937;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* ─── Scroll-Reveal Utilities ─────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-scale {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in-scale.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Stagger helper: add to the wrapping list/grid */
+.stagger>* {
+  transition-delay: calc(var(--i, 0) * 110ms);
+}
+
+.stagger>*:nth-child(1) {
+  --i: 1;
+}
+
+.stagger>*:nth-child(2) {
+  --i: 2;
+}
+
+.stagger>*:nth-child(3) {
+  --i: 3;
+}
+
+.stagger>*:nth-child(4) {
+  --i: 4;
+}
+
+.stagger>*:nth-child(5) {
+  --i: 5;
+}
+
+.stagger>*:nth-child(6) {
+  --i: 6;
+}
+
+/* ─── Looping Background Keyframes ───────────────── */
+
+/* Gentle float for blobs / decorative shapes */
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-18px) rotate(2deg);
+  }
+
+  66% {
+    transform: translateY(10px) rotate(-2deg);
+  }
+}
+
+@keyframes floatX {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+/* Pulsing glow ring */
+@keyframes pulseRing {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(1.12);
+  }
+}
+
+/* Rotating gradient orb */
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shimmer sweep across a surface */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Particle drift upward */
+@keyframes drift {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  90% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(-120px) translateX(20px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Wave morph for blobs */
+@keyframes morphBlob {
+
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  50% {
+    border-radius: 50% 60% 30% 60% / 40% 50% 60% 50%;
+  }
+
+  75% {
+    border-radius: 70% 30% 60% 40% / 30% 70% 40% 70%;
+  }
+}
+
+/* Subtle scale breathe */
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+/* ─── Reusable BG Animation Classes ─────────────── */
+.animFloat {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animFloatX {
+  animation: floatX 7s ease-in-out infinite;
+}
+
+.animPulse {
+  animation: pulseRing 4s ease-in-out infinite;
+}
+
+.animRotate {
+  animation: rotateSlow 20s linear infinite;
+}
+
+.animMorph {
+  animation: morphBlob 10s ease-in-out infinite;
+}
+
+.animBreathe {
+  animation: breathe 5s ease-in-out infinite;
+}
