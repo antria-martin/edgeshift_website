@@ -1,0 +1,257 @@
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f2ff 0%, #e8ecff 50%, #f5f0ff 100%);
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Morphing blobs */
+.blob1 {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle at 40% 40%, rgba(105, 34, 196, 0.13) 0%, transparent 70%);
+    top: -160px;
+    right: -120px;
+    pointer-events: none;
+}
+
+.blob2 {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle at 60% 60%, rgba(26, 86, 219, 0.1) 0%, transparent 70%);
+    bottom: -80px;
+    left: -80px;
+    pointer-events: none;
+}
+
+.blob3 {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.07) 0%, transparent 70%);
+    top: 40%;
+    left: 40%;
+    pointer-events: none;
+}
+
+/* Floating particles */
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--purple);
+    opacity: 0;
+    pointer-events: none;
+    animation: drift 5s ease-in-out infinite;
+}
+
+/* Dot grid overlay */
+.dotGrid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(105, 34, 196, 0.08) 1.5px, transparent 1.5px);
+    background-size: 36px 36px;
+    pointer-events: none;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    width: 100%;
+    position: relative;
+}
+
+/* ─── Slide ────────────────────────────────── */
+.slide {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.slide.active {
+    display: grid;
+    animation: fadeSlide 0.6s ease;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ─── Content ───────────────────────────────── */
+.content {
+    max-width: 540px;
+}
+
+.heading {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--purple);
+}
+
+.sub {
+    font-size: 1.05rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 36px;
+}
+
+.actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btnPrimary {
+    background: var(--purple);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 18px rgba(105, 34, 196, 0.3);
+}
+
+.btnPrimary:hover {
+    background: var(--purple-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(105, 34, 196, 0.4);
+}
+
+.btnSecondary {
+    background: transparent;
+    color: var(--purple);
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 2px solid var(--purple);
+    transition: all 0.2s;
+}
+
+.btnSecondary:hover {
+    background: var(--purple);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ─── Image ─────────────────────────────────── */
+.imageWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroImg {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(105, 34, 196, 0.15));
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* ─── Arrows ─────────────────────────────────── */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: var(--purple);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    transition: background 0.2s, transform 0.2s;
+    z-index: 10;
+}
+
+.arrow:hover {
+    background: var(--purple);
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 12px;
+}
+
+.next {
+    right: 12px;
+}
+
+/* ─── Dots ─────────────────────────────────── */
+.dots {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(105, 34, 196, 0.3);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.activeDot {
+    background: var(--purple);
+    transform: scale(1.3);
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 900px) {
+    .slide.active {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .heroImg {
+        max-width: 320px;
+    }
+}

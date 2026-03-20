@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64">
+
+  <!-- Dark arrow pointer -->
+  <path
+    d="M6,2 L6,46 L18,34 L26,54 L33,51 L25,31 L42,31 Z"
+    fill="#1e2330"
+    stroke="#000"
+    stroke-width="1.5"
+    stroke-linejoin="round"
+  />
+
+  <!-- Gear centered at (30, 26) -->
+  <g transform="translate(30, 26)">
+
+    <defs>
+      <clipPath id="topHalf">
+        <rect x="-12" y="-12" width="24" height="12"/>
+      </clipPath>
+      <clipPath id="bottomHalf">
+        <rect x="-12" y="0" width="24" height="12"/>
+      </clipPath>
+    </defs>
+
+    <!-- ORANGE teeth — top half -->
+    <rect x="-3" y="-15" width="6" height="7" rx="1.5" fill="#f07a1a" transform="rotate(0)"/>
+    <rect x="-3" y="-15" width="6" height="7" rx="1.5" fill="#f07a1a" transform="rotate(45)"/>
+    <rect x="-3" y="-15" width="6" height="7" rx="1.5" fill="#f07a1a" transform="rotate(315)"/>
+
+    <!-- GRAY teeth — bottom half -->
+    <rect x="-3" y="-15" width="6" height="7" rx="1.5" fill="#6b7280" transform="rotate(90)"/>
+    <rect x="-3" y="-15" width="6" height="7" rx="1.5" fill="#6b7280" transform="rotate(135)"/>
+    <rect x="-3" y="-15" width="6" height="7" rx="1.5" fill="#6b7280" transform="rotate(180)"/>
+    <rect x="-3" y="-15" width="6" height="7" rx="1.5" fill="#6b7280" transform="rotate(225)"/>
+    <rect x="-3" y="-15" width="6" height="7" rx="1.5" fill="#6b7280" transform="rotate(270)"/>
+
+    <!-- Gray full circle base -->
+    <circle cx="0" cy="0" r="11" fill="#6b7280"/>
+    <!-- Orange top half -->
+    <circle cx="0" cy="0" r="11" fill="#f07a1a" clip-path="url(#topHalf)"/>
+
+    <!-- Dark inner hole -->
+    <circle cx="0" cy="0" r="5" fill="#1e2330"/>
+
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="1.5" fill="#4b5563"/>
+
+  </g>
+
+</svg>

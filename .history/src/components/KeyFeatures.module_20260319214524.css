@@ -1,0 +1,48 @@
+.section   { background: #fff; padding: 100px 24px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.header    { text-align: center; margin-bottom: 64px; }
+ 
+.eyebrow  { font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; color: #f07a1a; text-transform: uppercase; margin-bottom: 10px; }
+.title    { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: #1f2937; margin-bottom: 16px; }
+.subtitle { font-size: 1.05rem; color: #6b7280; max-width: 500px; margin: 0 auto; }
+ 
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+ 
+.card {
+    background: #fafafa;
+    border: 1px solid #e8eaec;
+    border-radius: 16px;
+    padding: 36px 28px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(240, 122, 26, 0) 0%, rgba(240, 122, 26, 0.04) 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(240, 122, 26, 0.12); border-color: rgba(240, 122, 26, 0.25); }
+.card:hover::before { opacity: 1; }
+ 
+.icon      { font-size: 2.4rem; margin-bottom: 18px; display: block; }
+.cardTitle { font-size: 1.15rem; font-weight: 700; color: #1f2937; margin-bottom: 12px; }
+.cardDesc  { font-size: 0.92rem; color: #6b7280; line-height: 1.75; }
+ 
+.line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f07a1a, #f9a85d);
+    transition: width 0.4s ease;
+}
+.card:hover .line { width: 100%; }
+ 
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+ 
